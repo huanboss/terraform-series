@@ -1,24 +1,24 @@
-terraform {
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-    }
-  }
-}
+# terraform {
+#   required_providers {
+#     aws = {
+#       source = "hashicorp/aws"
+#     }
+#   }
+# }
 
-provider "aws" {
-  region = "us-southeast-1"
-}
+# provider "aws" {
+#   region = "us-southeast-1"
+# }
 
-resource "aws_instance" "server" {
-  count         = 2
-  ami           = "ami-07a6e3b1c102cdba8"
-  instance_type = "t2.micro"
+# resource "aws_instance" "server" {
+#   count         = 2
+#   ami           = "ami-07a6e3b1c102cdba8"
+#   instance_type = "t2.micro"
 
-  tags = {
-    Name = "Server ${count.index}"
-  }
-}
+#   tags = {
+#     Name = "Server ${count.index}"
+#   }
+# }
 
 # resource "aws_instance" "server" {
 #   for_each = toset(["instance1", "instance2", "instance3", "instance4"])
@@ -51,20 +51,20 @@ resource "aws_instance" "server" {
 
 
 
-locals {
-  ami_ids = {
-    "linux" : "ami-051f8a213df8bc089",
-    "ubuntu" : "ami-080e1f13689e07408",
-  }
-}
+# locals {
+#   ami_ids = {
+#     "linux" : "ami-051f8a213df8bc089",
+#     "ubuntu" : "ami-080e1f13689e07408",
+#   }
+# }
 
-resource "aws_instance" "server" {
+# resource "aws_instance" "server" {
 
-  provider = aws.us-east-1
-  for_each = local.ami_ids
-  ami = each.value
-  instance_type = "t2.micro"
-  tags = {
-    Name = "Server ${each.key}"
-  }
-}
+#   provider = aws.us-east-1
+#   for_each = local.ami_ids
+#   ami = each.value
+#   instance_type = "t2.micro"
+#   tags = {
+#     Name = "Server ${each.key}"
+#   }
+# }

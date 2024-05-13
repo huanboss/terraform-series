@@ -1,8 +1,9 @@
 # 1. Blocks: Defining blocks using type and enclosing them with curly braces.
 
-block_type {
+/*block_type {
   attribute = "value"
 }
+*/
 
 resource "aws_instance" "intro" {
   ami                    = "ami-07a6e3b1c102cdba8"
