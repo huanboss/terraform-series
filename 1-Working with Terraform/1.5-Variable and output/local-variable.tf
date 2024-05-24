@@ -1,8 +1,12 @@
 
 
 # locals {
-#   ami  = "ami-07a6e3b1c102cdba8"
+#     ami_ids = {
+#     "linux" : "ami-0b0dcb5067f052a63",
+#     "ubuntu" : "ami-08c40ec9ead489470",
+#   }
 #   type = "t2.micro"
+
 #   tags = {
 #     Name        = "EC2"
 #     Derpartment = "IT"
@@ -10,8 +14,4 @@
 #   }
 # }
 
-# resource "aws_instance" "myvm" {
-#   ami           = local.ami
-#   instance_type = local.type
-#   tags          = local.tags
-# }
+

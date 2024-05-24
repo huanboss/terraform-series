@@ -1,10 +1,10 @@
 variable "ami" {
   type        = string
-  description = "AMI ID for EC2 Instance"
-#  default     = "ami-07a6e3b1c102cdba8"
+  description = "AMI ID cua EC2"
+  #  default     = "ami-07a6e3b1c102cdba8"
   validation {
     condition     = length(var.ami) > 4 && substr(var.ami, 0, 4) == "ami-"
-    error_message = "Please provide a valid value for variable AMI."
+    error_message = "Nhap dung gia tri AMI id"
   }
 }
 
@@ -17,7 +17,6 @@ variable "type" {
 variable "tags" {
   type = object({
     Name = string
-    Env  = string
   })
   description = "Tags for EC2 Instance"
   # default = {
